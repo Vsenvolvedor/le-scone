@@ -23,8 +23,20 @@ $s-device: 480px;
       @content;
     }
   } @else if $size = s {
-    @media screen and (max-width: #{$s-device - 1}) {
+    @media screen and (max-width: #{$m-device - 1}) {
       @content;
     }
   } 
+}
+
+// Função do grid
+
+@function grid($col, $offset: false) {
+  $width: $col / $cols * 100 + '%';
+  $result: calc(#{$width} - $gutter);
+  @if $offset == offset {
+    $gutter: $gutter / 2;
+    $result: calc(#{$width} + $gutter);
+  }
+  @return $result;
 }
