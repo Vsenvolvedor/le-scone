@@ -10,3 +10,21 @@ $s-device: 480px;
 *, *::after, *::before {
   box-sizing: border-box;
 }
+
+// Mixin de media-querie
+
+@mixin d($size) {
+  @if $size == l {
+    @media screen and (min-width: #{$l-device}) {
+      @content;
+    }
+  } @else if $size = m {
+    @media screen and (min-width: #{$m-device}) and (max-width: #{$l-device - 1}) {
+      @content;
+    }
+  } @else if $size = s {
+    @media screen and (max-width: #{$s-device - 1}) {
+      @content;
+    }
+  } 
+}
