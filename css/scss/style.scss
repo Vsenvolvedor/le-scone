@@ -1,5 +1,10 @@
+// Gerais
+
 @import '_reset.scss' ;
 @import '_grid.scss' ;
 @import '_variaveis-e-mixins.scss' ;
 @import '_geral.scss' ;
 
+// Partes do site
+
+@import '_intro.scss';
